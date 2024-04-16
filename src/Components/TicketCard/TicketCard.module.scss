@@ -1,0 +1,96 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+.container {
+  background-color: $color-white;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 2px rgba(87, 86, 86, 0.12), 1px 2px 5px 2px rgba(77, 76, 76, 0.24);
+  margin: 10px;
+  @include flex(center, flex-start, row);
+
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .order {
+    @include flex(center, center, column);
+    border-right: 1px solid $color-light-gray;
+    padding: 20px;
+
+    @media(max-width: 600px) {
+      border-right: none;
+    }
+
+    .button {
+      color: $color-white;
+      background-color: $color-orange;
+      border: none;
+      width: 160px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 18px;
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: url('../../assets/pointer.png') 10 10, pointer;
+          background-color: $color-light-orange;
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 20px;
+    @include flex(center, center, column);
+
+    .timeContainer {
+      @include flex(center, center, row);
+      @media(max-width: 400px) {
+        @include flex(center, center, column);
+      }
+
+      .stopsWrapper {
+        @include flex(center, flex-end, row);
+        padding: 2px;
+
+        .stops {
+          font-weight: 400;
+          color: $color-dark-gray;
+          text-transform: uppercase;
+          border-bottom: 1px solid $color-dark-gray;
+          padding: 5px;
+          font-size: 15px;
+        }
+
+        .airplane {
+          width: 15px;
+          height: 15px;
+          margin: 0 0px -10px -1px;
+        }
+      }
+
+      .time {
+        color: $color-black;
+        font-size: 40px;
+        font-weight: 400;
+      }
+    }
+
+    .cityContainer {
+      @include flex(space-between, center, row);
+      width: 100%;
+      font-weight: 500;
+
+      @media(max-width: 400px) {
+        @include flex(center, center, column);
+      }
+
+      .date {
+        font-weight: 400;
+        color: $color-dark-gray;
+      }
+    }
+  }
+}

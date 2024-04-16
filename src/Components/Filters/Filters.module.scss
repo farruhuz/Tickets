@@ -1,0 +1,149 @@
+@import './../../styles/variables.scss';
+
+.container {
+  min-width: 250px;
+  min-height: 300px;
+  background-color: $color-white;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 2px rgba(87, 86, 86, 0.12), 1px 2px 5px 2px rgba(77, 76, 76, 0.24);
+  margin: 10px;
+  padding-bottom: 10px;
+
+  .title {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+
+  .buttonWrapper {
+    padding: 15px;
+
+    .button {
+      color: $color-dark-blue;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 20px;
+      background-color: inherit;
+      border: 1px solid $color-dark-gray;
+
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: url('../../assets/pointer.png') 10 10, pointer;
+          background-color: $color-light-blue;
+          border: 1px solid $color-dark-blue;
+        }
+      }
+    }
+
+    .activeButton {
+      color: $color-white;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 20px;
+      background-color: $color-dark-blue;
+      border: 1px solid $color-dark-blue;
+
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: url('../../assets/pointer.png') 10 10, pointer;
+          color: $color-dark-blue;
+          background-color: $color-light-blue;
+          border: 1px solid $color-dark-blue;
+        }
+      }
+    }
+  }
+
+  .inputWrapper {
+    width: 92.7%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-light-blue;
+      }
+
+      &:hover .inputButton {
+        display: block;
+      }
+    }
+
+    .inputButton {
+      cursor: url('../../assets/pointer.png') 10 10, pointer;
+      border: none;
+      text-transform: uppercase;
+      color: $color-dark-blue;
+      background-color: inherit;
+      font-weight: 500;
+      font-size: 13px;
+      display: none;
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    .labelCheckbox {
+      font-size: 20px;
+      color: black;
+      position: relative;
+      padding: 0px 0px 0px 30px;
+      line-height: 23px;
+      cursor: url('../../assets/pointer.png') 10 10, pointer;
+    }
+
+    .labelCheckbox::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: inherit;
+      border: 2px solid $color-dark-gray;
+      border-radius: 5px;
+    }
+
+    .labelCheckbox::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: url('../../assets/checked.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $color-light-blue;
+      border-radius: 5px;
+      border: 2px solid $color-dark-blue;
+      display: none;
+    }
+
+    .checkbox:checked + .labelCheckbox::after {
+      display: block;
+    }
+  }
+}
+

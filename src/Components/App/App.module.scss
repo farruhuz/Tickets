@@ -1,0 +1,31 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-light-gray;
+  @include flex(flex-start, center, column);
+
+  .logo {
+    height: 70px;
+    width: auto;
+    margin: 40px auto;
+    border-radius: 50%;
+    box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.12), 0 10px 5px rgba(0, 0, 0, 0.24);
+  }
+
+  .wrapper {
+    @include flex(center, flex-start, row);
+    min-width: 1200px;
+
+    @media (max-width: 1250px) {
+      @include flex(space-between, flex-start, row);
+      min-width: 90%;
+    }
+
+    @media (max-width: 1250px) {
+      @include flex(center, center, column);
+    }
+  }
+}
